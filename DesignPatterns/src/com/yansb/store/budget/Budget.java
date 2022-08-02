@@ -1,15 +1,24 @@
 package com.yansb.store.budget;
 
+import com.yansb.store.budget.status.BudgetStatus;
+import com.yansb.store.budget.status.InAnalysis;
+
 import java.math.BigDecimal;
 
 public class Budget {
-  final private BigDecimal value;
-
+  private BigDecimal value;
   final private int itemsQuantity;
+  private BudgetStatus status;
 
   public Budget(BigDecimal value, int itemsQuantity) {
     this.value = value;
     this.itemsQuantity = itemsQuantity;
+    this.status = new InAnalysis();
+  }
+
+  public void applyExtraDiscount(){
+    BigDecimal extraDiscountValue = this.status.calculateExtraDiscountValue(this);
+    this.value = this.value.subtract(extraDiscountValue);
   }
 
   public BigDecimal getValue() {
@@ -18,5 +27,17 @@ public class Budget {
 
   public int getItemsQuantity() {
     return itemsQuantity;
+  }
+
+  public void setStatus(BudgetStatus status) {
+    this.status = status;
+  }
+
+  public void approve(){
+    this.status.approve(this);
+  }
+
+  public void reprove(){
+    this.status.reprove(this);
   }
 }
