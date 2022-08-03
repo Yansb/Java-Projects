@@ -4,7 +4,6 @@ import com.yansb.store.DomainException;
 import com.yansb.store.http.HttpAdapter;
 
 import java.util.Map;
-import java.util.Objects;
 
 public class RegisterBudget {
   final private HttpAdapter http;
@@ -22,7 +21,7 @@ public class RegisterBudget {
     final var url = "http://api.com/budget";
 
     Map<String, Object> data = Map.of(
-          "value", budget.getValue(),
+          "value", budget.value(),
           "itemsQuantity", budget.getItemsQuantity()
         );
 

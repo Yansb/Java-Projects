@@ -11,7 +11,7 @@ public class DiscountToBudgetWithMoreThanFiveItems extends Discount{
 
   @Override
   protected BigDecimal makeCalculation(Budget budget) {
-    return budget.getValue().multiply(new BigDecimal("0.1"));
+    return budget.value().multiply(new BigDecimal("0.1"));
   }
 
   @Override
