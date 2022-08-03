@@ -21,7 +21,7 @@ public class RegisterBudget {
     final var url = "http://api.com/budget";
 
     Map<String, Object> data = Map.of(
-          "value", budget.value(),
+          "value", budget.getValue(),
           "itemsQuantity", budget.getItemsQuantity()
         );
 

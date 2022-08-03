@@ -12,6 +12,6 @@ public class ICMS extends Tax {
 
   @Override
   public BigDecimal makeCalculation(Budget  budget){
-    return budget.value().multiply(new BigDecimal("0.1"));
+    return budget.getValue().multiply(new BigDecimal("0.1"));
   }
 }

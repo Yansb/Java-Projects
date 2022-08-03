@@ -4,6 +4,6 @@ import java.math.BigDecimal;
 
 public interface Budgetable {
 
-  BigDecimal value();
+  BigDecimal getValue();
 
 }

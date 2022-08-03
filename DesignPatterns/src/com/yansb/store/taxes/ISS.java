@@ -11,7 +11,7 @@ public class ISS extends Tax {
 
   @Override
   public BigDecimal makeCalculation(Budget  budget){
-    return budget.value().multiply(new BigDecimal("0.06"));
+    return budget.getValue().multiply(new BigDecimal("0.06"));
   }
 
 

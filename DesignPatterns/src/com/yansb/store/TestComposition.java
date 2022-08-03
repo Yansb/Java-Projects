@@ -2,6 +2,7 @@ package com.yansb.store;
 
 import com.yansb.store.budget.Budget;
 import com.yansb.store.budget.BudgetItem;
+import com.yansb.store.budget.BudgetProxy;
 
 import java.math.BigDecimal;
 
@@ -16,6 +17,9 @@ public class TestComposition {
 
     newBudget.addItem(old);
 
-    System.out.println(newBudget.value());
+    BudgetProxy proxy = new BudgetProxy(newBudget);
+
+    System.out.println(proxy.getValue());
+    System.out.println(proxy.getValue());
   }
 }

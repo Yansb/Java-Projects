@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class InAnalysis extends BudgetStatus{
 
   public BigDecimal calculateExtraDiscountValue(Budget budget){
-    return budget.value().multiply(new BigDecimal("0.05"));
+    return budget.getValue().multiply(new BigDecimal("0.05"));
   }
 
   public void approve(Budget budget){

@@ -2,6 +2,7 @@ package com.yansb.store;
 
 import com.yansb.store.order.GenerateOrder;
 import com.yansb.store.order.GenerateOrderHandler;
+import com.yansb.store.order.OrderLog;
 import com.yansb.store.order.action.SaveOrderInDB;
 import com.yansb.store.order.action.SendOrderEmail;
 
@@ -18,7 +19,8 @@ public class TestOrder {
     GenerateOrderHandler generateOrderHandler = new GenerateOrderHandler(
         Arrays.asList(
             new SaveOrderInDB(),
-            new SendOrderEmail()
+            new SendOrderEmail(),
+            new OrderLog()
         )
     );
 

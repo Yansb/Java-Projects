@@ -26,7 +26,12 @@ public class Budget implements Budgetable{
     this.value = this.value.subtract(extraDiscountValue);
   }
 
-  public BigDecimal value() {
+  public BigDecimal getValue() {
+    try {
+      Thread.sleep(2000);
+    }catch (Exception e){
+      throw new RuntimeException(e);
+    }
     return value;
   }
 
@@ -55,7 +60,7 @@ public class Budget implements Budgetable{
   }
 
   public void addItem(Budgetable item) {
-    this.value = this.value.add(item.value());
+    this.value = this.value.add(item.getValue());
     this.items.add(item);
   }
 }
