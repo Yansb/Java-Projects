@@ -19,7 +19,7 @@ public abstract class BudgetStatus {
     throw new DomainException("Budget already repproved");
   }
 
-  public void finalize(Budget budget) {
+  public void finish(Budget budget) {
     throw new DomainException("Budget already finalized");
   }
 }

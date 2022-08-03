@@ -10,7 +10,7 @@ public class Approved extends BudgetStatus {
   }
 
   @Override
-  public void finalize(Budget budget) {
+  public void finish(Budget budget) {
     budget.setStatus(new Finished());
   }
 }

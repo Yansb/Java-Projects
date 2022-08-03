@@ -1,6 +1,7 @@
 package com.yansb.store.budget;
 
 import com.yansb.store.budget.status.BudgetStatus;
+import com.yansb.store.budget.status.Finished;
 import com.yansb.store.budget.status.InAnalysis;
 
 import java.math.BigDecimal;
@@ -39,5 +40,13 @@ public class Budget {
 
   public void reprove(){
     this.status.reprove(this);
+  }
+
+  public boolean isFinished(){
+    return status instanceof Finished;
+  }
+
+  public void finish() {
+    this.status.finish(this);
   }
 }
