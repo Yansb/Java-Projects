@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class OrderStrings {
@@ -8,10 +9,8 @@ public class OrderStrings {
     words.add("a");
     words.add("bb");
 
-    words.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+    words.sort(Comparator.comparing(String::length));
 
-    words.forEach(d -> System.out.println(d));
-
-    new Thread(() -> System.out.println("executando um runnable")).start();
+    words.forEach(System.out::println);
   }
 }
