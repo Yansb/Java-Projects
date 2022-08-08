@@ -1,8 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.*;
 
 public class OrderStrings {
   public static void main(String[] args) {
@@ -11,44 +8,10 @@ public class OrderStrings {
     words.add("a");
     words.add("bb");
 
-    Comparator<String> compare = new CompareBySize();
-    System.out.println(words);
+    words.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
 
-    // Collections.sort(words, compare);
-    words.sort(compare);
+    words.forEach(d -> System.out.println(d));
 
-    System.out.println(words);
-
-    // for(String w : words){
-    //   System.out.println(w);
-    // }
-
-    Consumer<String> consumer = new PrintInLine();
-    words.forEach(consumer);
-
-  }
-}
-
-class CompareBySize implements Comparator<String> {
-
-  @Override
-  public int compare(String s1, String s2) {
-    if(s1.length() < s2.length()){
-      return -1;
-    }
-
-    if(s1.length() > s2.length()){
-      return 1;
-    }
-
-    return 0;
-  }
-}
-
-class PrintInLine implements Consumer<String> {
-
-  @Override
-  public void accept(String s) {
-    System.out.println(s);
+    new Thread(() -> System.out.println("executando um runnable")).start();
   }
 }
